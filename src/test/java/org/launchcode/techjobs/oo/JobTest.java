@@ -12,22 +12,7 @@ import static org.junit.Assert.*;
 
 public class JobTest {
     //TODO: Create your unit tests here
-//    @BeforeEach //This is where the objects/jobs are created
-//            public void createObjects() {
-//
-//        Employer launchCode = new Employer();
-//        Employer threeFourThree = new Employer();
-//        Location madison = new Location();
-//        Location theLou = new Location();
-//
-//        PositionType productTester = new PositionType();
-//        PositionType codeDesigner = new PositionType();
-//
-//        CoreCompetency java = new CoreCompetency();
-//        CoreCompetency javascript = new CoreCompetency();
-//        Job tester = new Job("Tester",launchCode,theLou,productTester,java);
-//        Job coder = new Job("Coder", threeFourThree,madison,codeDesigner, javascript);
-//    }
+
     @Test
     public void testSettingJobID() {
         Job productTester = new Job();
@@ -56,7 +41,20 @@ public class JobTest {
         Job productTesteing = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         assertEquals(false,productTesters.getId()==productTesteing.getId());
         }
+@Test
+    public void testToStringStartsAndEndsWithNewLine(){
+    Job productTesters = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+    assertEquals("\n"+ "" + "\n", productTesters.toString());
+}
+@Test
+    public void testToStringContainsCorrectLabelsAndData(){
+    Job productTesters = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+    assertEquals("\n" + "ID: "+ "1" + "\n",productTesters.toString());
+}
+@Test
+    public void testToStringHandlesEmptyField(){
 
+}
 
 
 

@@ -1,5 +1,7 @@
 package org.launchcode.techjobs.oo;
 
+import java.lang.reflect.Field;
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class Job {
@@ -33,6 +35,19 @@ public class Job {
         this.coreCompetency = coreCompetency;
 
     }
+
+    public String toString(){
+
+        return "\n" +
+            "\n" + "ID: " + this.id+ "\n"+
+            "\n" + "Name: " + this.name + "\n"+
+            "\n" + "Employer: " + this.employer + "\n"+
+            "\n" + "Location: " + this.location + "\n"+
+            "\n" + "Position Type: " + this.positionType + "\n"+
+            "\n" + "Core Competency: " + this.coreCompetency + "\n"+
+            "\n";
+    }
+
 
     // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
     //  match.
