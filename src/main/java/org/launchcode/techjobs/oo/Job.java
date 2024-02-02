@@ -45,20 +45,20 @@ public class Job {
         String p = String.valueOf(this.positionType);
         String c = String.valueOf(this.coreCompetency);
 
-        if(n == (null)) n = notPresent;
-        if(e ==(null)) e = notPresent;
-        if(l ==(null)) l = notPresent;
-        if(p == (null)) p = notPresent;
-        if(c == (null)) c = notPresent;
+        if(n == (null) || n == "") n = notPresent;
+        if(e ==(null) || e == "") e = notPresent;
+        if(l ==(null) || l == "") l = notPresent;
+        if(p == (null) || p == "") p = notPresent;
+        if(c == (null) || c == "") c = notPresent;
 
 
-        return "\n" +
-                    "\n" + "ID: " + this.id + "\n" +
-                    "\n" + "Name: " + n + "\n" +
-                    "\n" + "Employer: " + e + "\n" +
-                    "\n" + "Location: " + l + "\n" +
-                    "\n" + "Position Type: " + p + "\n" +
-                    "\n" + "Core Competency: " + c + "\n" +
+        return
+                    "\n" + "ID: " + this.id +
+                    "\n" + "Name: " + n +
+                    "\n" + "Employer: " + e +
+                    "\n" + "Location: " + l +
+                    "\n" + "Position Type: " + p +
+                    "\n" + "Core Competency: " + c +
                     "\n";
         }
 

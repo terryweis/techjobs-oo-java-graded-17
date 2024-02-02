@@ -14,7 +14,7 @@ public class JobTest {
     //TODO: Create your unit tests here
 
     @Test
-    public void testSettingJobID() {
+    public void testSettingJobId() {
         Job productTester = new Job();
         Job codeDesigner = new Job();
         assertNotEquals(productTester.getId(),codeDesigner.getId());
@@ -50,26 +50,26 @@ public class JobTest {
 @Test
     public void testToStringContainsCorrectLabelsAndData(){
     Job productTesters = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-    assertEquals("\n" +
-            "\n" + "ID: " + "4" + "\n"+
-            "\n" + "Name: " + "Product tester" + "\n"+
-            "\n" + "Employer: " + "ACME" + "\n"+
-            "\n" + "Location: " + "Desert" + "\n"+
-            "\n" + "Position Type: " + "Quality control" + "\n"+
-            "\n" + "Core Competency: " + "Persistence" + "\n"+
+    assertEquals(
+            "\n" + "ID: " + "4" +
+            "\n" + "Name: " + "Product tester" +
+            "\n" + "Employer: " + "ACME" +
+            "\n" + "Location: " + "Desert" +
+            "\n" + "Position Type: " + "Quality control" +
+            "\n" + "Core Competency: " + "Persistence" +
             "\n",productTesters.toString());
 }
 @Test
     public void testToStringHandlesEmptyField(){
     Job productTesters = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency(null));
     productTesters.toString();
-    assertEquals("\n" +
-            "\n" + "ID: " + "3" + "\n"+
-            "\n" + "Name: " + "Product tester" + "\n"+
-            "\n" + "Employer: " + "ACME" + "\n"+
-            "\n" + "Location: " + "Desert" + "\n"+
-            "\n" + "Position Type: " + "Quality control" + "\n"+
-            "\n" + "Core Competency: " + "Data not available" + "\n"+
+    assertEquals(
+            "\n" + "ID: " + "3" +
+            "\n" + "Name: " + "Product tester" +
+            "\n" + "Employer: " + "ACME" +
+            "\n" + "Location: " + "Desert" +
+            "\n" + "Position Type: " + "Quality control" +
+            "\n" + "Core Competency: " + "Data not available" +
             "\n",productTesters.toString());
 }
 
