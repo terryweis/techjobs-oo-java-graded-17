@@ -15,6 +15,7 @@ public class Job {
     private PositionType positionType;
     private CoreCompetency coreCompetency;
 
+
     // TODO: Add two constructors - one to initialize a unique ID and a second to initialize the
     //  other five fields. The second constructor should also call the first in order to initialize
     //  the 'id' field.
@@ -36,17 +37,30 @@ public class Job {
 
     }
 
-    public String toString(){
+    public String toString() {
+        String notPresent = "Data not available";
+        String n = getName();
+        String e = String.valueOf(this.employer);
+        String l = String.valueOf(this.location);
+        String p = String.valueOf(this.positionType);
+        String c = String.valueOf(this.coreCompetency);
+
+        if(n == (null)) n = notPresent;
+        if(e ==(null)) e = notPresent;
+        if(l ==(null)) l = notPresent;
+        if(p == (null)) p = notPresent;
+        if(c == (null)) c = notPresent;
+
 
         return "\n" +
-            "\n" + "ID: " + this.id+ "\n"+
-            "\n" + "Name: " + this.name + "\n"+
-            "\n" + "Employer: " + this.employer + "\n"+
-            "\n" + "Location: " + this.location + "\n"+
-            "\n" + "Position Type: " + this.positionType + "\n"+
-            "\n" + "Core Competency: " + this.coreCompetency + "\n"+
-            "\n";
-    }
+                    "\n" + "ID: " + this.id + "\n" +
+                    "\n" + "Name: " + n + "\n" +
+                    "\n" + "Employer: " + e + "\n" +
+                    "\n" + "Location: " + l + "\n" +
+                    "\n" + "Position Type: " + p + "\n" +
+                    "\n" + "Core Competency: " + c + "\n" +
+                    "\n";
+        }
 
 
     // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields

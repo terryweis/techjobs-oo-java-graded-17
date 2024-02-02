@@ -38,25 +38,40 @@ public class JobTest {
     @Test
     public void testJobsForEquality(){
         Job productTesters = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-        Job productTesteing = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-        assertEquals(false,productTesters.getId()==productTesteing.getId());
+        Job productTesting = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        assertEquals(false,productTesters.getId()==productTesting.getId());
         }
 @Test
     public void testToStringStartsAndEndsWithNewLine(){
     Job productTesters = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-    assertEquals("\n"+ "" + "\n", productTesters.toString());
+    assertEquals(true, productTesters.toString().startsWith("\n"));
+    assertEquals(true,productTesters.toString().endsWith("\n"));
 }
 @Test
     public void testToStringContainsCorrectLabelsAndData(){
     Job productTesters = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-    assertEquals("\n" + "ID: "+ "1" + "\n",productTesters.toString());
+    assertEquals("\n" +
+            "\n" + "ID: " + "4" + "\n"+
+            "\n" + "Name: " + "Product tester" + "\n"+
+            "\n" + "Employer: " + "ACME" + "\n"+
+            "\n" + "Location: " + "Desert" + "\n"+
+            "\n" + "Position Type: " + "Quality control" + "\n"+
+            "\n" + "Core Competency: " + "Persistence" + "\n"+
+            "\n",productTesters.toString());
 }
 @Test
     public void testToStringHandlesEmptyField(){
-
+    Job productTesters = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency(null));
+    productTesters.toString();
+    assertEquals("\n" +
+            "\n" + "ID: " + "3" + "\n"+
+            "\n" + "Name: " + "Product tester" + "\n"+
+            "\n" + "Employer: " + "ACME" + "\n"+
+            "\n" + "Location: " + "Desert" + "\n"+
+            "\n" + "Position Type: " + "Quality control" + "\n"+
+            "\n" + "Core Competency: " + "Data not available" + "\n"+
+            "\n",productTesters.toString());
 }
-
-
 
 
 
